@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        // Read the total number of test cases/pairs
+        int t = s.nextInt();
+        
+        // Arrays to store the left and right elements of each pair
+        String[] pair_left = new String[t];
+        String[] pair_right = new String[t];
+        
+        for (int i = 0; i < t; i++) {
+            pair_left[i] = s.next();
+            pair_right[i] = s.next();
+        }
+
+        // Declare a HashSet to track unique pair combinations
+        HashSet<String> set = new HashSet<>();
+
+        // Loop through the input pairs, add them to the set, and print current unique count
+        for (int i = 0; i < t; i++) {
+            set.add(pair_left[i] + " " + pair_right[i]);
+            System.out.println(set.size());
+        }
+        
+        s.close();
+    }
+}
